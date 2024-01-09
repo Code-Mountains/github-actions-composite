@@ -23,5 +23,5 @@ runs:
       run: echo "random-number=$(echo $RANDOM)" >> $GITHUB_OUTPUT
       shell: bash 
 
-    - run: '../goodbye.sh'
+    - run: $(realpath ../)/goodbye.sh
       shell: bash
