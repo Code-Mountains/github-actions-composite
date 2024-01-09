@@ -1,0 +1,17 @@
+on: [push]
+
+jobs:
+  hello_world_run:
+    runs-on: [self-hosted, ub22]
+    name: Hello hello 
+    steps: 
+
+      - uses: actions/checkout@v4
+      
+      - uses: ./action2
+        id: foo 
+        with: 
+          who-to-greet: 'Kiran Dangol'
+      
+      - run: echo random-number ${{ steps.foo.outputs.random-number }}
+        shell: bash
